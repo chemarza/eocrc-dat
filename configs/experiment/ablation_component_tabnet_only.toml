@@ -1,0 +1,7 @@
+name = "ablation_component_tabnet_only"
+seed = 7
+
+[use]
+model = "tabnet"
+data = "synthetic"
+train = "default"

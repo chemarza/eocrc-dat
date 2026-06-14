@@ -1,0 +1,10 @@
+name = "supplementary_unmatched_cohort"
+seed = 7
+
+[use]
+model = "dat"
+data = "synthetic"
+train = "default"
+
+[data]
+match = false

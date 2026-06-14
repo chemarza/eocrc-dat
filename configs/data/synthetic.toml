@@ -1,0 +1,6 @@
+source = "synthetic"
+match = true
+winsor_p = 0.01
+scale = 1.0
+seed = 7
+drop_domains = []

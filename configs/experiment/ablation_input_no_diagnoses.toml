@@ -1,0 +1,10 @@
+name = "ablation_input_no_diagnoses"
+seed = 7
+
+[use]
+model = "dat"
+data = "synthetic"
+train = "default"
+
+[data]
+drop_domains = ["diagnoses"]

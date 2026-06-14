@@ -1,0 +1,11 @@
+method = "dat"
+k_steps = 2
+gamma = 1.3
+tabnet_dim = 16
+n_glu = 2
+q_select = 24
+ft_dim = 32
+ft_heads = 4
+ft_layers = 2
+ff_mult = 2
+dropout = 0.0

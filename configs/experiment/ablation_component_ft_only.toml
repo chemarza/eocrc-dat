@@ -1,0 +1,7 @@
+name = "ablation_component_ft_only"
+seed = 7
+
+[use]
+model = "ft_transformer"
+data = "synthetic"
+train = "default"

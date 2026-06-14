@@ -1,0 +1,8 @@
+# for unit-test smoke only; do not use for reporting
+name = "_smoke"
+seed = 7
+
+[use]
+model = "dat_smoke"
+data = "synthetic_smoke"
+train = "_smoke"

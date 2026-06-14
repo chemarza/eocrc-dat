@@ -1,0 +1,11 @@
+max_epochs = 200
+batch_size = 256
+learning_rate = 1e-3
+weight_decay = 1e-5
+warmup_ratio = 0.05
+patience = 20
+grad_accum = 1
+world_size = 1
+amp = false
+lam = 1e-5
+device = "auto"

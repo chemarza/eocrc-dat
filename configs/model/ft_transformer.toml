@@ -1,0 +1,6 @@
+method = "ft_transformer"
+ft_dim = 192
+ft_heads = 8
+ft_layers = 3
+ff_mult = 2
+dropout = 0.1

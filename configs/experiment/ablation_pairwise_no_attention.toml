@@ -1,0 +1,7 @@
+name = "ablation_pairwise_no_attention"
+seed = 7
+
+[use]
+model = "mlp"
+data = "synthetic"
+train = "default"

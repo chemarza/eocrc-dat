@@ -1,0 +1,5 @@
+method = "saint"
+saint_dim = 96
+saint_heads = 8
+saint_layers = 2
+dropout = 0.1

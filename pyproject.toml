@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eocrc-dat"
+version = "0.1.0"
+description = "Dual-Attention Transformer risk stratification for early-onset colorectal cancer from nationwide EHR"
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+license = { file = "LICENSE" }
+keywords = ["clinical-decision-support", "tabular-deep-learning", "colorectal-cancer", "electronic-health-records", "risk-stratification"]
+dependencies = [
+    "torch>=2.1",
+    "numpy>=1.24",
+    "scipy>=1.11",
+    "scikit-learn>=1.3",
+    "pandas>=2.0",
+    "xgboost>=2.0",
+    "typed-argument-parser>=1.10",
+]
+
+[project.optional-dependencies]
+boosting = ["lightgbm>=4.0", "catboost>=1.2"]
+tuning = ["optuna>=3.4"]
+dev = ["pytest>=7.4", "ruff>=0.4", "black>=24.0", "isort>=5.12", "mypy>=1.8"]
+
+[project.scripts]
+eocrc-dat = "eocrc_dat.agency.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["eocrc_dat*"]
+
+[tool.setuptools.package-data]
+eocrc_dat = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["eocrc_dat"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+known_first_party = ["eocrc_dat"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["eocrc_dat"]
+warn_unused_ignores = false
+warn_return_any = false
+
+[[tool.mypy.overrides]]
+module = [
+    "torch.*",
+    "sklearn.*",
+    "scipy.*",
+    "pandas.*",
+    "xgboost.*",
+    "lightgbm.*",
+    "catboost.*",
+    "optuna.*",
+    "tap.*",
+    "statsmodels.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

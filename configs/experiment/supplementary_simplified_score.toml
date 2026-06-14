@@ -1,0 +1,7 @@
+name = "supplementary_simplified_score"
+seed = 7
+
+[use]
+model = "dat"
+data = "synthetic"
+train = "default"
